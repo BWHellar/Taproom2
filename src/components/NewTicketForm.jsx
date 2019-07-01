@@ -1,6 +1,7 @@
 import React from 'react';
 import toothy from '../../assets/images/toothy.png';
 
+
 function NewTicketForm(){
   return (
     <div>
