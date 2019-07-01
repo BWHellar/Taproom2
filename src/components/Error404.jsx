@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Error404(props){
+function Error404(){
   return (
     <div>
       <h2>Yo this page aint right</h2>
@@ -11,7 +12,7 @@ function Error404(props){
 }
 
 Error404.propTypes = {
-  location:PropTypes.object
+  location: PropTypes.object
 };
 
 export default Error404;

@@ -3,7 +3,7 @@ import Header from './Header';
 import TicketList from './TicketList';
 import { Switch, Route } from 'react-router-dom';
 import NewTicketForm from './NewTicketForm';
-import Error404 form './Error404';
+import Error404 from './Error404';
 
 function App(){
   return (
