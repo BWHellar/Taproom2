@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
-function NewTicketForm(props){
+function NewBeerForm(props){
   let _names = null;
   let _location = null;
   let _issue = null;
 
-  function handleNewTicketFormSubmission(event) {
+  function handleNewBeerFormSubmission(event) {
     event.preventDefault();
-    props.onNewTicketCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4()});
+    props.onNewBeerCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4()});
     _names.value = '';
     _location.value = '';
     _issue.value = '';
@@ -17,20 +17,20 @@ function NewTicketForm(props){
 
   return (
     <div>
-      <form onSubmit={handleNewTicketFormSubmission}>
+      <form onSubmit={handleNewBeerFormSubmission}>
         <input
           type='text'
           id='names'
-          placeholder='Pair Names'
+          placeholder='Beer Name'
           ref={(input) => {_names = input;}}/>
         <input
           type='text'
           id='location'
-          placeholder='Location'
+          placeholder='Brewery'
           ref={(input) => {_location = input;}}/>
         <textarea
           id='issue'
-          placeholder='Describe your issue.'
+          placeholder='Description'
           ref={(textarea) => {_issue = textarea;}}/>
         <button type='submit'>Help!</button>
       </form>
@@ -38,8 +38,8 @@ function NewTicketForm(props){
   );
 }
 
-NewTicketForm.propTypes = {
-  onNewTicketCreation: PropTypes.func
+NewBeerForm.propTypes = {
+  onNewBeerCreation: PropTypes.func
 };
 
-export default NewTicketForm;
+export default NewBeerForm;

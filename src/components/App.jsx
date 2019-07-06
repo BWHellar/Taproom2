@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
-import TicketList from './TicketList';
-import NewTicketControl from './NewTicketControl';
+import BeerList from './BeerList';
+import NewBeerControl from './NewBeerControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 
@@ -10,15 +10,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterTicketList: []
+      masterBeerList: []
     };
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+    this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
   }
 
-  handleAddingNewTicketToList(newTicket){
-    var newMasterTicketList = this.state.masterTicketList.slice();
-    newMasterTicketList.push(newTicket);
-    this.setState({masterTicketList: newMasterTicketList});
+  handleAddingNewBeerToList(newBeer){
+    var newMasterBeerList = this.state.masterBeerList.slice();
+    newMasterBeerList.push(newBeer);
+    this.setState({masterBeerList: newMasterBeerList});
   }
 
   render(){
@@ -26,8 +26,8 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} />} />
+          <Route path='/newbeer' render={()=><NewBeerControl onNewBeerCreation={this.handleAddingNewBeerToList} />} />
           <Route component={Error404} />
         </Switch>
       </div>
