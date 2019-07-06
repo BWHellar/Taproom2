@@ -1,11 +1,17 @@
 import React from 'react';
 import Beer from './Beer';
 import PropTypes from 'prop-types';
+import toothy from '../../assets/images/toothy.png'
+
+
 
 function BeerList(props){
-  console.log(props.beerList);
+  var img = '../assets/images/toothy.png';
+  var stylesBeerList = {
+    backgroundImage: url('img'),
+  }
   return (
-    <div>
+    <div style={stylesBeerList}>
       <hr/>
       {props.beerList.map((beer) =>
         <Beer names={beer.names}
