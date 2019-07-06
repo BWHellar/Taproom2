@@ -1,4 +1,4 @@
-# Doctor Finder
+# TapRoom
 #### This will create a mock Tap Room, 7/5/2019
 
 
@@ -55,7 +55,7 @@ return (
 ## Setup/Installation Requirements
 
 1. Clone this repository: $ git clone >repo name here<
-2. Change into the work directory: $ cd DoctorLookup
+2. Change into the work directory: $ cd Taproom
 3. In console type: npm install
 4. In console type: npm run start
 
