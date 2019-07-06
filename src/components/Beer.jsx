@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 function Beer(props){
   return (
     <div>
+    <style jsx>{`
+        div {
+          background-color: red;
+          text-align: center;
+        }
+      `}</style>
       <h3>{props.brew} - {props.names}</h3>
       <p><em>{props.desc}</em></p>
       <hr/>

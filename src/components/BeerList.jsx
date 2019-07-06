@@ -1,7 +1,7 @@
 import React from 'react';
 import Beer from './Beer';
 import PropTypes from 'prop-types';
-import toothy from '../../assets/images/toothy.png'
+
 
 
 

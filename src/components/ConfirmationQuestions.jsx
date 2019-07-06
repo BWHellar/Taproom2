@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function ConfirmationQuestions(props){
   return (
     <div>
-      <p>Have you gone through all the steps?</p>
+      <p>Are you legit?</p>
       <button onClick={props.onTroubleshootingConfirmation}>Yes</button>
     </div>
   );

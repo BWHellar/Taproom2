@@ -21,19 +21,51 @@ function NewBeerForm(props){
     paddingTop: '50px'
   }
   return (
-    <div style={myStyledComponentStyles}>
+    <div>
+      <style jsx>{`
+          div {
+            width: 800px;
+            height: 400px;
+            box-sizing: border-box;
+            margin: auto auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px black;
+            color: orange;
+            margin-top: 200px;
+          }
+          label{
+          display: inline-block;
+          float: left;
+          clear: left;
+          width: 250px;
+          text-align: right;
+          }
+          textarea {
+            display: inline-block;
+            float: left;
+          }
+          #desc {
+            height: 200px;
+            padding-top: 0;
+            padding-left: 0;
+            line-height: 1em;
+          }
+        `}</style>
+        <h1>Input New Beer</h1>d
       <form onSubmit={handleNewBeerFormSubmission}>
-        <input
+        <label>Beer:</label><input
           type='text'
           id='names'
           placeholder='Beer Name'
           ref={(input) => {_names = input;}}/>
-        <input
+        <label>Brewery:</label><input
           type='text'
           id='brew'
           placeholder='Brewery'
           ref={(input) => {_brew = input;}}/>
-        <textarea
+        <label>About</label><input
           id='desc'
           placeholder='Description'
           ref={(textarea) => {_desc = textarea;}}/>
