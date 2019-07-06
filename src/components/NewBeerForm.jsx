@@ -4,19 +4,24 @@ import { v4 } from 'uuid';
 
 function NewBeerForm(props){
   let _names = null;
-  let _location = null;
-  let _issue = null;
+  let _brew = null;
+  let _desc = null;
 
   function handleNewBeerFormSubmission(event) {
     event.preventDefault();
-    props.onNewBeerCreation({names: _names.value, location: _location.value, issue: _issue.value, id: v4()});
+    props.onNewBeerCreation({names: _names.value, brew: _brew.value, desc: _desc.value, id: v4()});
     _names.value = '';
-    _location.value = '';
-    _issue.value = '';
+    _brew.value = '';
+    _desc.value = '';
   }
 
+  var myStyledComponentStyles = {
+    backgroundColor: '#ecf0f1',
+    fontFamily: 'sans-serif',
+    paddingTop: '50px'
+  }
   return (
-    <div>
+    <div style={myStyledComponentStyles}>
       <form onSubmit={handleNewBeerFormSubmission}>
         <input
           type='text'
@@ -25,14 +30,14 @@ function NewBeerForm(props){
           ref={(input) => {_names = input;}}/>
         <input
           type='text'
-          id='location'
+          id='brew'
           placeholder='Brewery'
-          ref={(input) => {_location = input;}}/>
+          ref={(input) => {_brew = input;}}/>
         <textarea
-          id='issue'
+          id='desc'
           placeholder='Description'
-          ref={(textarea) => {_issue = textarea;}}/>
-        <button type='submit'>Help!</button>
+          ref={(textarea) => {_desc = textarea;}}/>
+        <button type='submit'>Enter!</button>
       </form>
     </div>
   );

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 function Beer(props){
   return (
     <div>
-      <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p>
+      <h3>{props.brew} - {props.names}</h3>
+      <p><em>{props.desc}</em></p>
       <hr/>
     </div>
   );
@@ -13,8 +13,8 @@ function Beer(props){
 
 Beer.propTypes = {
   names: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  issue: PropTypes.string
+  brew: PropTypes.string.isRequired,
+  desc: PropTypes.string
 };
 
 export default Beer;

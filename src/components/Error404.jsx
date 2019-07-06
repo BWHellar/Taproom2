@@ -12,7 +12,7 @@ function Error404(){
 }
 
 Error404.propTypes = {
-  location: PropTypes.object
+  brew: PropTypes.object
 };
 
 export default Error404;

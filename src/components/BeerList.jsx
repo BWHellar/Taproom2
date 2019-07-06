@@ -6,17 +6,13 @@ import toothy from '../../assets/images/toothy.png'
 
 
 function BeerList(props){
-  var img = '../assets/images/toothy.png';
-  var stylesBeerList = {
-    backgroundImage: url('img'),
-  }
   return (
-    <div style={stylesBeerList}>
+    <div>
       <hr/>
       {props.beerList.map((beer) =>
         <Beer names={beer.names}
-          location={beer.location}
-          issue={beer.issue}
+          brew={beer.brew}
+          desc={beer.desc}
           key={beer.id}/>
       )}
     </div>
