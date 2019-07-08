@@ -13,6 +13,7 @@ function BeerList(props){
         <Beer names={beer.names}
           brew={beer.brew}
           desc={beer.desc}
+          formattedWaitTime={beer.formattedWaitTime}
           key={beer.id}/>
       )}
     </div>

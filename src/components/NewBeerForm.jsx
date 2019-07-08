@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Moment from 'moment';
 
 function NewBeerForm(props){
   let _names = null;
@@ -9,7 +10,7 @@ function NewBeerForm(props){
 
   function handleNewBeerFormSubmission(event) {
     event.preventDefault();
-    props.onNewBeerCreation({names: _names.value, brew: _brew.value, desc: _desc.value, id: v4()});
+    props.onNewBeerCreation({names: _names.value, brew: _brew.value, desc: _desc.value, id: v4(), timeOpen: new Moment()});
     _names.value = '';
     _brew.value = '';
     _desc.value = '';
@@ -19,7 +20,7 @@ function NewBeerForm(props){
     backgroundColor: '#ecf0f1',
     fontFamily: 'sans-serif',
     paddingTop: '50px'
-  }
+  };
   return (
     <div>
       <style jsx>{`
@@ -36,11 +37,11 @@ function NewBeerForm(props){
             margin-top: 200px;
           }
           label{
-          display: inline-block;
-          float: left;
-          clear: left;
-          width: 250px;
-          text-align: right;
+            display: inline-block;
+            float: left;
+            clear: left;
+            width: 250px;
+            text-align: right;
           }
           textarea {
             display: inline-block;
@@ -53,7 +54,7 @@ function NewBeerForm(props){
             line-height: 1em;
           }
         `}</style>
-        <h1>Input New Beer</h1>d
+        <h1>Input New Beer</h1>
       <form onSubmit={handleNewBeerFormSubmission}>
         <label>Beer:</label><input
           type='text'

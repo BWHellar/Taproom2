@@ -4,6 +4,8 @@ import BeerList from './BeerList';
 import NewBeerControl from './NewBeerControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
+import Moment from 'moment';
+import Admin from './Admin';
 
 class App extends React.Component {
 
@@ -14,9 +16,30 @@ class App extends React.Component {
     };
     this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
   }
+  
+  componentDidMount() { 
+    this.waitTimeUpdateTimer = setInterval(() =>
+      this.updateBeerElapsedWaitTime(),
+        60000
+      );
+  }
+  
+  componentWillUnmount() {
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+  
+  updateBeerElapsedWaitTime() {
+    console.log('check');
+    let newMasterBeerList = this.state.masterBeerList.slice();
+    newMasterBeerList.forEach((beer) =>
+      beer.formattedWaitTime = (beer.timeOpen).fromNow(true)
+    );
+    this.setState({masterBeerList: newMasterBeerList});
+  }
 
   handleAddingNewBeerToList(newBeer){
     var newMasterBeerList = this.state.masterBeerList.slice();
+    newBeer.formattedWaitTime = (newBeer.timeOpen).fromNow(true);
     newMasterBeerList.push(newBeer);
     this.setState({masterBeerList: newMasterBeerList});
   }
@@ -28,6 +51,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} />} />
           <Route path='/newbeer' render={()=><NewBeerControl onNewBeerCreation={this.handleAddingNewBeerToList} />} />
+          <Route path='/admin' render={()=><Admin ticketList={this.state.masterTicketList} />} />
           <Route component={Error404} />
         </Switch>
       </div>
