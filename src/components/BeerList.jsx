@@ -3,8 +3,6 @@ import Beer from './Beer';
 import PropTypes from 'prop-types';
 
 
-
-
 function BeerList(props){
   return (
     <div>
@@ -14,6 +12,7 @@ function BeerList(props){
           brew={beer.brew}
           desc={beer.desc}
           formattedWaitTime={beer.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
           key={beer.id}/>
       )}
     </div>
@@ -21,7 +20,8 @@ function BeerList(props){
 }
 
 BeerList.propTypes = {
-  beerList: PropTypes.array
+  beerList: PropTypes.array,
+  currentRouterPath: PropTypes.string
 };
 
 export default BeerList;
