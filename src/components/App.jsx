@@ -55,6 +55,7 @@ class App extends React.Component {
                 position: absolute;
                 width: 100%;
                 height: 100%;
+                background-position: center;
             }
         `}</style>
         <Header/>

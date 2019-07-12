@@ -8,14 +8,19 @@ function Beer(props){
     <div>
     <style jsx>{`
         div {
-          background-color: red;
+          background-color: #353839;
           text-align: center;
           border-radius: 25px;
+          color: red;
+          mix-blend-mode: lighten;
         }
         body {
           background-image: url(${taps});
           text-align: center;
           background-position: center;
+        }
+        h3, h4 {
+          font: bolder 2vw "Impact";
         }
       `}</style>
       <h3>{props.brew} - {props.names}</h3>
