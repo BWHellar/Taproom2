@@ -9,6 +9,7 @@ function Beer(props){
         div {
           background-color: red;
           text-align: center;
+          border-radius: 25px;
         }
       `}</style>
       <h3>{props.brew} - {props.names}</h3>

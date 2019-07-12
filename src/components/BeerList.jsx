@@ -6,6 +6,12 @@ import PropTypes from 'prop-types';
 function BeerList(props){
   return (
     <div>
+    <style jsx>{`
+        *div {
+          background-color: black;
+          border-radius: 25px;
+        }
+      `}</style>
       <hr/>
       {props.beerList.map((beer) =>
         <Beer names={beer.names}
