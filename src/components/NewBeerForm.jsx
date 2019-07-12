@@ -26,7 +26,7 @@ function NewBeerForm(props){
       <style jsx>{`
           div {
             width: 800px;
-            height: 400px;
+            height: 300px;
             box-sizing: border-box;
             margin: auto auto;
             display: flex;
@@ -35,6 +35,7 @@ function NewBeerForm(props){
             box-shadow: 0 0 10px black;
             color: orange;
             margin-top: 200px;
+            background-color: #FFCC9999;
           }
           label{
             display: inline-block;

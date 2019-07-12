@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+import taps from '../../assets/images/taps.jpg'
 
 function Beer(props){
   const beerInformation =
@@ -10,6 +11,11 @@ function Beer(props){
           background-color: red;
           text-align: center;
           border-radius: 25px;
+        }
+        body {
+          background-image: url(${taps});
+          text-align: center;
+          background-position: center;
         }
       `}</style>
       <h3>{props.brew} - {props.names}</h3>

@@ -1,6 +1,8 @@
 import React from 'react';
 import Beer from './Beer';
 import PropTypes from 'prop-types';
+import taps from '../../assets/images/taps.jpg'
+import what from '../../assets/images/taps.jpg'
 
 
 function BeerList(props){
@@ -11,7 +13,16 @@ function BeerList(props){
           background-color: black;
           border-radius: 25px;
         }
+        h3 {
+          text-align: center;
+        }
+        body {
+          backgroundImage: url(${taps});
+          text-align: center;
+          background-position: center;
+        }
       `}</style>
+      <h3>Beers on Tap</h3>
       <hr/>
       {props.beerList.map((beer) =>
         <Beer names={beer.names}

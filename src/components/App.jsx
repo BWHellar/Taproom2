@@ -6,6 +6,7 @@ import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Moment from 'moment';
 import Admin from './Admin';
+import taps from '../../assets/images/taps.jpg'
 
 class App extends React.Component {
 
@@ -48,6 +49,14 @@ class App extends React.Component {
   render(){
     return (
       <div>
+      <style jsx>{`
+            div {
+                background-image: url(${taps});
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        `}</style>
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><BeerList beerList={this.state.masterBeerList} />} />
